@@ -61,7 +61,7 @@ InputBox, LoopNumber, LoopNumber, Number of tabs? (Currently %LoopNumber%), , 30
 Return
 
 ^+!w::		;Allows user to set number of tabs to use at a time
-InputBox, Weight, Weight, Number of tabs? (Currently %Weight%), , 300, 125
+InputBox, Weight, Weight, Weight? (Currently %Weight%), , 300, 125
 Return
 
 
@@ -180,7 +180,14 @@ Sleep, 500
 MouseMove, 800, 345
 Sleep, 5
 Click
-Sleep, 5
+Send, ^a
+Sleep, 100
+Send, {Backspace}
+Send, {Backspace}
+Send, {Backspace}
+Send, {Backspace}
+Send, {Backspace}
+Send, {Backspace}
 Send, %Weight%
 Sleep, 20
 
