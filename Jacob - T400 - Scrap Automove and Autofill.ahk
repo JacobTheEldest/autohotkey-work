@@ -31,6 +31,7 @@ OpenWindow(TheWindowTitle)
 
 
 LoopNumber = 1
+Weight = 16
 
 
 ~^+!/::		;Shows Hotkeys
@@ -39,12 +40,13 @@ LoopNumber = 1
 	Gui, ManageUID:Add, Text,, ?   ->  Show Hotkeys
 	Gui, ManageUID:Add, Text,, .   ->  Hide Hotkeys
 	Gui, ManageUID:Add, Text,, l   ->  Number of Tabs
+	Gui, ManageUID:Add, Text,, w   ->  Change autofill weight
 	Gui, ManageUID:Add, Text,, b   ->  Opens Tabs
 	Gui, ManageUID:Add, Text,, h   ->  Opens Homepage
 	Gui, ManageUID:Add, Text,, m   ->  Opens Manage UID
 	Gui, ManageUID:Add, Text,, o   ->  Opens UIDs from Excel
 	Gui, ManageUID:Add, Text,, d   ->  Disposition Step
-	Gui, ManageUID:Add, Text,, c   ->  Enter 16, Complete
+	Gui, ManageUID:Add, Text,, c   ->  Enter weight, Complete
 	Gui, ManageUID:Add, Text,, s   ->  Scrap Teardown
 	Gui, ManageUID:Add, Text,, -   ->  Top of Page
 	Gui, ManageUID:Add, Text,, =   ->  Bottom of Page
@@ -56,6 +58,10 @@ Return
 
 ^+!l::		;Allows user to set number of tabs to use at a time
 InputBox, LoopNumber, LoopNumber, Number of tabs? (Currently %LoopNumber%), , 300, 125
+Return
+
+^+!w::		;Allows user to set number of tabs to use at a time
+InputBox, Weight, Weight, Number of tabs? (Currently %Weight%), , 300, 125
 Return
 
 
@@ -165,7 +171,7 @@ If (LoopNumber > 1) {
 Return
 
 
-^+!c::		;Enter 16, Complete
+^+!c::		;Enter weight, Complete
 Loop %LoopNumber% {
 CoordMode, Mouse, Client
 Send, {Home}
@@ -183,7 +189,7 @@ Send, {Backspace}
 Send, {Backspace}
 Send, {Backspace}
 Send, {Backspace}
-Send, 16
+Send, %Weight%
 Sleep, 20
 
 MouseMove, 800, 555
