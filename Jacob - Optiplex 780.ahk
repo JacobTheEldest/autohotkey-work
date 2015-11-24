@@ -38,7 +38,7 @@ If CPUStep = 1
 
 If CPUStep = 2
 {
-	MouseMove, 620, 420
+	MouseMove, 620, 455
 	Sleep, 10
 	Click
 	Sleep, 50
@@ -49,7 +49,7 @@ If CPUStep = 2
 
 If CPUStep = 3
 {
-	MouseMove, 1050, 420
+	MouseMove, 1050, 455
 	Sleep, 10
 	Click
 	Sleep, 50
