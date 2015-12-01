@@ -79,19 +79,19 @@ return
 
 
 ButtonManageUnitID:
-	Run, "%A_AhkPath%" "C:\Users\Systems.Test\Documents\Code\autohotkey-work\Jacob - Manage Unit ID.ahk"
+	Run, "%A_AhkPath%" "Jacob - Manage Unit ID.ahk"
 	Script1 = Jacob - Manage Unit ID.ahk - AutoHotkey
 	Gui, Main:Destroy
 return
 
 ButtonDDE:
-	Run, "%A_AhkPath%" "C:\Users\Systems.Test\Documents\Code\autohotkey-work\Jacob - DDE.ahk"
+	Run, "%A_AhkPath%" "Jacob - DDE.ahk"
 	Script1 = Jacob - DDE.ahk - AutoHotkey
 	Gui, Main:Destroy
 return
 
 ButtonDesktops:
-	Run, "%A_AhkPath%" "C:\Users\Systems.Test\Documents\Code\autohotkey-work\Jacob - Desktops.ahk"
+	Run, "%A_AhkPath%" "Jacob - Desktops.ahk"
 	Script1 = Jacob - Desktops.ahk - AutoHotkey
 	Gui, Main:Destroy
 	Gui, Desktop:New, , Select Model
@@ -102,20 +102,20 @@ ButtonDesktops:
 return
 
 ButtonOptiplex760:
-	Run, "%A_AhkPath%" "C:\Users\Systems.Test\Documents\Code\autohotkey-work\Jacob - Optiplex 760.ahk"
+	Run, "%A_AhkPath%" "Jacob - Optiplex 760.ahk"
 	Script2 = Jacob - Optiplex 760.ahk - AutoHotkey
 	Gui, Desktop:Destroy
 return
 
 ButtonOptiplex780:
-	Run, "%A_AhkPath%" "C:\Users\Systems.Test\Documents\Code\autohotkey-work\Jacob - Optiplex 780.ahk"
+	Run, "%A_AhkPath%" "Jacob - Optiplex 780.ahk"
 	Script2 = Jacob - Optiplex 780.ahk - AutoHotkey
 	Gui, Desktop:Destroy
 	return
 return
 
 ButtonLaptops:
-	Run, "%A_AhkPath%" "C:\Users\Systems.Test\Documents\Code\autohotkey-work\Jacob - Laptops.ahk"
+	Run, "%A_AhkPath%" "Jacob - Laptops.ahk"
 	Script1 = Jacob - Laptops.ahk - AutoHotkey
 	Gui, Main:Destroy
 	Gui, Laptop:New, , Select Model
@@ -126,14 +126,14 @@ ButtonLaptops:
 return
 
 ButtonLatitude2120:
-	Run, "%A_AhkPath%" "C:\Users\Systems.Test\Documents\Code\autohotkey-work\Jacob - Latitude 2120.ahk"
+	Run, "%A_AhkPath%" "Jacob - Latitude 2120.ahk"
 	Script2 = Jacob - Latitude 2120.ahk - AutoHotkey
 	Gui, Laptop:Destroy
 	return
 return
 
 ButtonLatitudeE5420:
-	Run, "%A_AhkPath%" "C:\Users\Systems.Test\Documents\Code\autohotkey-work\Jacob - Latitude E5420.ahk"
+	Run, "%A_AhkPath%" "Jacob - Latitude E5420.ahk"
 	Script2 = Jacob - Latitude E5420.ahk - AutoHotkey
 	Gui, Laptop:Destroy
 	return
