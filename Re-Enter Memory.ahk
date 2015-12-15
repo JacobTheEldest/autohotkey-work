@@ -44,8 +44,9 @@ LoopNumber = 1
 	Gui, ManageUID:Add, Text,, o   ->  Opens UIDs from Excel
 	Gui, ManageUID:Add, Text,, n   ->  Next Step
 	Gui, ManageUID:Add, Text,, a   ->  Add Component
-	Gui, ManageUID:Add, Text,, m   ->  Autofill Memory 
-	Gui, ManageUID:Add, Text,, ~   ->  Deletes Bottom Component
+	Gui, ManageUID:Add, Text,, m   ->  Select Memory
+	Gui, ManageUID:Add, Text,, f   ->  Autofill Memory 
+	Gui, ManageUID:Add, Text,, d   ->  Deletes Bottom Component
 	Gui, ManageUID:Add, Text,, -   ->  Top of Page
 	Gui, ManageUID:Add, Text,, =   ->  Bottom of Page
 	Gui, ManageUID:Show, X250 Y100
@@ -107,7 +108,7 @@ Loop %LoopNumber% {
 	Send, {Home}
 	Sleep, 500
 	CoordMode, Mouse, Client
-	MouseMove, xxx, yyy
+	MouseMove, 695, 275
 	Sleep, 50
 	Click
 	Sleep, 50
@@ -138,7 +139,7 @@ CoordMode, Mouse, Client
 Send, {Home}
 Sleep, 500
 
-MouseMove, xxx, yyy
+MouseMove, 1345, 260
 Sleep, 10
 Click
 Sleep, 50
@@ -157,7 +158,7 @@ CoordMode, Mouse, Client
 Send, {Home}
 Sleep, 500
 
-MouseMove, xxx, yyy
+MouseMove, 350, 300
 Sleep, 10
 Click
 Sleep, 50
@@ -170,12 +171,35 @@ If (LoopNumber > 1) {
 Return
 
 
-^+!`::		;Deletes Bottom Entry in Configuration
+^+!m::		;Selects Memory Component
+Loop %LoopNumber% {
+CoordMode, Mouse, Client
+Send, {Home}
+Sleep, 500
+
+MouseMove, 850, 335
+Sleep, 10
+Click
+Sleep, 50
+Send, memory
+sleep, 20
+Send, {Enter}
+Sleep, 50
+
+If (LoopNumber > 1) {
+	Send, ^{Tab}
+	Sleep, 50
+	}
+}
+Return
+
+
+^+!d::		;Deletes Bottom Entry in Configuration
 CoordMode, Mouse, Client
 Send, {End}
 Sleep, 500
 
-MouseMove, xxx, yyy
+MouseMove, 350, 650
 Sleep, 10
 Click
 Sleep, 100
@@ -189,7 +213,7 @@ Send, ^{Tab}
 Return
 
 
-^+!m::		;Fills out memory
+^+!f::		;Fills out memory
 
 OpenWindow("Excel")
 Sleep, 50
@@ -206,14 +230,14 @@ Sleep, 500
 
 ;Quantity
 OpenWindow("Excel")
-Sleep, 50
+Sleep, 100
 Send, {Right}
 sleep, 20
 Send, ^c
 Sleep, 20
 OpenWindow("MARRc")
 Sleep, 50
-MouseMove, xxx, yyy
+MouseMove, 850, 385
 Sleep, 10
 Click
 Sleep, 10
@@ -224,63 +248,73 @@ Sleep, 200
 
 ;Capacity
 OpenWindow("Excel")
-Sleep, 50
+Sleep, 100
 Send, {Right}
 sleep, 20
 Send, ^c
 Sleep, 20
 OpenWindow("MARRc")
 Sleep, 50
-MouseMove, xxx, yyy
+MouseMove, 615, 430
 Sleep, 10
 Click
 Sleep, 10
 Send, ^v
 Sleep, 100
+Send, {Enter}
+Sleep, 50
 
 ;Form Factor
-MouseMove, xxx, yyy
-Sleep, 10
+MouseMove, 1180, 430
+Sleep, 300
 Click
-Sleep, 10
+Sleep, 20
 Send, dimm
 Sleep, 100
+Send, {Enter}
+Sleep, 50
 
 ;Type (PCx)
 OpenWindow("Excel")
-Sleep, 50
+Sleep, 100
 Send, {Right}
 sleep, 20
 Send, ^c
 Sleep, 20
 OpenWindow("MARRc")
 Sleep, 50
-MouseMove, xxx, yyy
+MouseMove, 615, 495
 Sleep, 10
 Click
 Sleep, 10
 Send, ^v
 Sleep, 100
+Send, {Enter}
+Sleep, 50
 
 ;Clock Speed
 OpenWindow("Excel")
-Sleep, 50
+Sleep, 100
 Send, {Right}
 sleep, 20
 Send, ^c
 Sleep, 20
 OpenWindow("MARRc")
 Sleep, 50
-MouseMove, xxx, yyy
+MouseMove, 1180, 495
 Sleep, 10
 Click
 Sleep, 10
 Send, ^v
 Sleep, 100
-
-;Bandwith Type
-OpenWindow("Excel")
+Send, {Enter}
 Sleep, 50
+
+;Bandwidth Type
+OpenWindow("Excel")
+Sleep, 100
+Send, {Right}
+Sleep, 20
 Send, ^c
 Sleep, 20
 Send, {Down}
@@ -297,21 +331,26 @@ Send, {Left}
 Sleep, 20
 OpenWindow("MARRc")
 Sleep, 50
-MouseMove, xxx, yyy
+MouseMove, 615, 560
 Sleep, 10
 Click
 Sleep, 10
 Send, ^v
+Sleep, 40
+Send, {Space}
+Send, :
 Sleep, 100
+Send, {Enter}
+Sleep, 50
 
-MouseMove, xxx, yyy
+MouseMove, 1430, 500
 Sleep, 100
 Click
 Sleep, 100
 
 Send, {End}
 Sleep, 500
-MouseMove, xxx, yyy
+MouseMove, 790, 620
 Sleep, 10
 Click
 }
