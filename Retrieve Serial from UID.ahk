@@ -43,7 +43,7 @@ LoopNumber = 1
 	Gui, ManageUID:Add, Text,, b   ->  Opens Tabs
 	Gui, ManageUID:Add, Text,, m   ->  Opens Manage UID
 	Gui, ManageUID:Add, Text,, o   ->  Opens UIDs/Serials from Excel
-	Gui, ManageUID:Add, Text,, u   ->  Copies UIDs to Excel
+	Gui, ManageUID:Add, Text,, s   ->  Copies Serials to Excel
 	Gui, ManageUID:Show, X250 Y100
 Return
 ~^+!.::		;Hides Hotkeys
@@ -130,7 +130,7 @@ OpenWindow("MARRc")
 Return
 
 
-^+!u::		;Copies UIDs to Excel (Adjacent column)
+^+!s::		;Copies Serial to Excel (Adjacent column)
 
 ;Selects cell right of start point
 OpenWindow("Excel")
@@ -149,17 +149,11 @@ Loop %LoopNumber% {
 	Send, {Home}
 	Sleep, 500
 	CoordMode, Mouse, Client
-	MouseMove, 465, 425
+	MouseMove, 755, 425
 	Sleep, 50
 	Click 2
 	Sleep, 50
-	Send, +{Right}
-	Send, +{Right}
-	Send, +{Right}
-	Send, +{Right}
-	Send, +{Right}
-	Send, +{Right}
-	Send, +{Right}
+	Send, +{Left}
 	Sleep, 50
 	Send, ^c
 	Sleep, 50
